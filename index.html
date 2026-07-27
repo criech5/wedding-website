@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria &amp; Cole — Save the Date</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     CUT HERE if pasting into a WordPress "Custom HTML" block.
+     Everything from <style> down through the closing </div> of
+     .cs-wrap is what you paste in. Skip the DOCTYPE/html/head/body
+     wrapper tags above and below — WordPress supplies those itself.
+     The <style> tag is fine to keep; Custom HTML blocks allow it.
+     ============================================================ -->
+
+<style>
+  :root{
+    --navy:#7FA7BD;
+    --navy-deep:#597E93;
+    --cream:#FAFAF9;
+    --ink:#2A3B42;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Public Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+  }
+
+  .cs-wrap{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+
+    /* ============================================================
+       PLACEHOLDER PHOTO GOES HERE.
+       Replace the background-image URL below with your own photo.
+       In WordPress: upload your photo via Media Library, copy its
+       URL, and paste it in place of "YOUR-PHOTO-URL-HERE.jpg".
+       ============================================================ */
+    background-image: url('photos/engagement.png'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Placeholder frame + label — remove this whole rule and the
+     .cs-placeholder-label div in the HTML once your real photo is in. */
+  .cs-placeholder-label{
+    position:absolute;
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+    background:rgba(255,255,255,0.9);
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:8px 16px;
+    border-radius:999px;
+  }
+
+  .cs-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(42,59,66,0.35) 0%, rgba(42,59,66,0.5) 60%, rgba(42,59,66,0.65) 100%);
+    z-index:1;
+  }
+
+  .cs-content{
+    position:relative;
+    z-index:2;
+    max-width:640px;
+    text-align:center;
+    padding:32px;
+    color:#fff;
+  }
+
+  .cs-eyebrow{
+    font-family:'Bookman', serif;
+    font-size:12px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    opacity:0.9;
+    margin-bottom:22px;
+  }
+
+  .cs-names{
+    font-family:'Bookman', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(34px, 6vw, 54px);
+    line-height:1.1;
+    margin:0 0 28px;
+  }
+
+  .cs-message{
+    font-family:'Bookman', serif;
+    font-size:clamp(18px, 2.6vw, 22px);
+    line-height:1.6;
+    margin:0 0 20px;
+  }
+
+  .cs-submessage{
+    font-family:'Bookman', serif;
+    font-size:15.5px;
+    line-height:1.7;
+    opacity:0.95;
+    margin:0 0 26px;
+  }
+
+  .cs-date{
+    font-family:'Bookman', serif;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    opacity:0.9;
+    margin:0 0 26px;
+  }
+
+  .cs-ps{
+    font-family:'Bookman', serif;
+    font-size:13.5px;
+    line-height:1.7;
+    opacity:0.85;
+    margin:28px 0 0;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="cs-wrap">
+  <div class="cs-overlay"></div>
+  <div class="cs-content">
+    <div class="cs-eyebrow">Save the Date</div>
+    <div class="cs-names">Maria &amp; Cole</div>
+    <div class="cs-date">July 15, 2027 · Sozopol, Bulgaria</div>
+    <p class="cs-message">We're so excited to get married next year and would love to have you join us!</p>
+    <p class="cs-submessage">We're currently finalizing the details on our wedding website and it will be available soon! In the meantime, we wanted you to have the date on your radar if you're planning to join us next summer.</p>
+    <p class="cs-ps">P.S. We know that traveling all the way to Bulgaria may not be feasible for everyone — for our family here in the states, we're planning a separate, smaller event to celebrate sometime next year! Details to come.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     CUT HERE ends the Custom-HTML-block-safe portion.
+     ============================================================ -->
+
+</body>
+</html>
