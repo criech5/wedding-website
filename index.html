@@ -42,6 +42,25 @@
   a{color:inherit;}
 
   /* ---------- PASSWORD GATE ---------- */
+    .gate-wrap{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+
+    /* ============================================================
+       PLACEHOLDER PHOTO GOES HERE.
+       Replace the background-image URL below with your own photo.
+       In WordPress: upload your photo via Media Library, copy its
+       URL, and paste it in place of "YOUR-PHOTO-URL-HERE.jpg".
+       ============================================================ */
+    background-image: url('photos/pw-screen-1.jpg'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
+    background-size: cover;
+    background-position: center;
+  }
+  
   .gate-overlay{
     position:fixed;
     inset:0;
@@ -49,7 +68,9 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    background:var(--cream);
+    background-image: url('photos/pw-screen-1.jpg'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
+    background-size: cover;
+    background-position: center;
     padding:24px;
   }
   .gate-card{
