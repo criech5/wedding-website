@@ -137,7 +137,7 @@
     padding:50px 24px;
     /* color:var(--ink); */
     background-image: url('photos/sunflowers-field-short.jpg');
-    background-position: top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -145,7 +145,18 @@
 
   @supports(-webkit-touch-callout: none) {
   .hero {
-    background-attachment: scroll;
+    position:relative;
+    min-height:20vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:50px 24px;
+    /* color:var(--ink); */
+    background-image: url('photos/sunflowers-field-alt.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
   .hero-inner{
