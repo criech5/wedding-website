@@ -135,8 +135,12 @@
     align-items:center;
     overflow:hidden;
     padding:80px 24px;
-    color:var(--ink);
-    background-color:var(--cream);
+    /* color:var(--ink); */
+    background-image: url('photos/sunflowers-field-short.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
   .hero-inner{
     max-width:920px;
@@ -173,14 +177,14 @@
     text-transform:lowercase;
   }
   .cyrillic-line{
-    font-family:'Fraunces', serif;
+    font-family:'Baskerville', serif;
     font-style:italic;
-    font-weight:500;
-    font-size:clamp(14px, 2.2vw, 18px);
+    font-weight:bolder;
+    font-size:clamp(26px, 2.2vw, 18px);
     color:var(--navy-deep);
     letter-spacing:0.02em;
     margin:0 0 26px;
-    opacity:0.9;
+    opacity:1;
   }
   .amp-cy{ color:var(--navy-deep); font-style:normal; padding:0 6px; opacity:0.7; }
   .hero-meta{
@@ -188,12 +192,13 @@
     justify-content:center;
     align-items:center;
     gap:18px;
-    font-family:'Space Mono', monospace;
-    font-size:12.5px;
+    font-family:'Baskerville', monospace;
+    font-size:16px;
     letter-spacing:0.18em;
     text-transform:uppercase;
+    font-weight: 800;
     color:var(--ink);
-    opacity:0.9;
+    opacity:1;
     margin-bottom:30px;
   }
   .hero-meta span.divider{ opacity:0.5; }
@@ -686,21 +691,21 @@
 <div id="site-root" style="display:none;">
 <div class="hero">
   <div class="hero-inner">
-    <h1>The Wedding <span class="amp">of</span></h1>
-    <h1>Maria and Cole</h1>
-    <div class="cyrillic-line">Сватбата на Мария и Кол</div>
+    <h1 style="color: #fff;">The Wedding <span class="amp" style="color: #fff;">of</span></h1>
+    <h1 style="color: #fff;">Maria and Cole</h1>
+    <div class="cyrillic-line" style="color: #fff;">Сватбата на Мария и Кол</div>
     <div class="hero-meta">
-      <span>Bulgaria</span><span class="divider">·</span><span>2027</span>
+      <span style="color: #fff;">Bulgaria</span><span class="divider">·</span><span style="color: #fff;">2027</span>
     </div>
   </div>
 </div>
 
-<div class="photo-strip">
+<!-- <div class="photo-strip">
   <img src="photos/sunflowers-field.jpg" alt="Sunflower field in Bulgaria">
   <img src="photos/sozopol-terrace.jpg" alt="Seaside terrace by the Black Sea">
   <img src="photos/burgas-pier.jpg" alt="Burgas beach and pier">
   <img src="photos/sozopol-alley.jpg" alt="Cobblestone alley in the old town">
-</div>
+</div> -->
 
 <div class="tabbar-wrap" id="tabbar-wrap">
   <button type="button" class="hamburger-btn" id="hamburger-btn" aria-expanded="false" aria-controls="tabbar">
