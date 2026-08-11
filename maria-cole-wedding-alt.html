@@ -130,18 +130,24 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    min-height:40vh;
+    min-height:20vh;
     display:flex;
     align-items:center;
     overflow:hidden;
-    padding:40px 24px;
+    padding:50px 24px;
     /* color:var(--ink); */
     background-image: url('photos/sunflowers-field-short.jpg');
     background-position: top;
     background-size: cover;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-attachment: fixed;
   }
+
+  @supports(-webkit-touch-callout: none) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
   .hero-inner{
     max-width:920px;
     margin:0 auto;
