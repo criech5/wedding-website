@@ -3,35 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maria &amp; Cole — Save the Date</title>
+<title>Maria &amp; Cole - Bulgaria - July 15, 2027</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- ============================================================
-     CUT HERE if pasting into a WordPress "Custom HTML" block.
-     Everything from <style> down through the closing </div> of
-     .cs-wrap is what you paste in. Skip the DOCTYPE/html/head/body
-     wrapper tags above and below — WordPress supplies those itself.
-     The <style> tag is fine to keep; Custom HTML blocks allow it.
-     ============================================================ -->
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#7FA7BD;
     --navy-deep:#597E93;
     --cream:#FAFAF9;
+    --cream-2:#EEF2F4;
+    --terracotta:#9FBAC9;
+    --rose:#4F7185;
+    --gold:#A9C4D4;
     --ink:#2A3B42;
+    --line: rgba(42,59,66,0.14);
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family:'Public Sans', sans-serif;
+    margin:0;
+    background-color:var(--cream);
     color:var(--ink);
-    background:var(--cream);
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
+  h1,h2,h3,.display{
+    font-family:'Libre Baskerville', Baskerville, 'Baskerville Old Face', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'Space Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
 
-  .cs-wrap{
+  /* ---------- PASSWORD GATE ---------- */
+    .gate-wrap{
     position:relative;
     min-height:100vh;
     display:flex;
@@ -45,114 +56,1502 @@
        In WordPress: upload your photo via Media Library, copy its
        URL, and paste it in place of "YOUR-PHOTO-URL-HERE.jpg".
        ============================================================ */
-    background-image: url('photos/engagement.png'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
+    background-image: url('photos/pw-screen-1.jpg'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
     background-size: cover;
     background-position: center;
   }
-
-  /* Placeholder frame + label — remove this whole rule and the
-     .cs-placeholder-label div in the HTML once your real photo is in. */
-  .cs-placeholder-label{
-    position:absolute;
-    top:24px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:3;
-    background:rgba(255,255,255,0.9);
-    color:var(--ink);
-    font-family:'Space Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    padding:8px 16px;
-    border-radius:999px;
-  }
-
-  .cs-overlay{
-    position:absolute;
+  
+  .gate-overlay{
+    position:fixed;
     inset:0;
-    background:linear-gradient(180deg, rgba(42,59,66,0.35) 0%, rgba(42,59,66,0.5) 60%, rgba(42,59,66,0.65) 100%);
-    z-index:1;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image: url('photos/pw-screen-1.jpg'), linear-gradient(160deg, #A9C4D4 0%, #7FA7BD 55%, #597E93 100%);
+    background-size: cover;
+    background-position: center;
+    padding:24px;
+  }
+  .gate-card{
+    width:100%;
+    max-width:400px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:36px 30px;
+    box-shadow:0 4px 18px rgba(7,37,48,0.06);
+    text-align:center;
+  }
+  .gate-card .eyebrow{margin-bottom:14px;}
+  .gate-card h1{
+    font-size:clamp(26px, 6vw, 34px);
+    margin:0 0 10px;
+    color:var(--navy-deep);
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .gate-card .gate-sub{
+    color:#3f5560;
+    font-size:14.5px;
+    line-height:1.6;
+    margin:0 0 22px;
+  }
+  #gate-form{display:flex;flex-direction:column;gap:12px;}
+  #gate-input{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px 14px;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:15px;
+    text-align:center;
+    letter-spacing:0.08em;
+  }
+  #gate-form button{
+    border:none;
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    padding:13px 18px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  #gate-form button:hover{background:var(--navy-deep);}
+  .gate-error{
+    color:var(--rose);
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;
+    margin-top:14px;
   }
 
-  .cs-content{
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:20vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:50px 24px;
+    /* color:var(--ink); */
+    background-image: url('photos/sunflowers-field-short.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  @supports(-webkit-touch-callout: none) {
+  .hero {
+    position:relative;
+    min-height:20vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:50px 24px;
+    background-image: url('photos/sunflowers-field-alt.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+  .hero-inner{
+    max-width:920px;
+    margin:0 auto;
+    text-align:center;
     position:relative;
     z-index:2;
-    max-width:640px;
-    text-align:center;
-    padding:32px;
-    color:#fff;
+    width:100%;
   }
-
-  .cs-eyebrow{
-    font-family:'Bookman', serif;
+  .eyebrow{
+    font-family:'Space Mono', monospace;
     font-size:12px;
     letter-spacing:0.3em;
     text-transform:uppercase;
-    opacity:0.9;
+    color:var(--rose);
+    opacity:0.85;
     margin-bottom:22px;
   }
-
-  .cs-names{
-    font-family:'Bookman', serif;
-    font-style:italic;
+  .hero h1{
+    font-size:clamp(38px, 8vw, 76px);
+    line-height:1.02;
+    margin:0 0 6px;
+    font-style:normal;
     font-weight:500;
-    font-size:clamp(34px, 6vw, 54px);
-    line-height:1.1;
-    margin:0 0 28px;
-  }
-
-  .cs-message{
-    font-family:'Bookman', serif;
-    font-size:clamp(18px, 2.6vw, 22px);
-    line-height:1.6;
-    margin:0 0 20px;
-  }
-
-  .cs-submessage{
-    font-family:'Bookman', serif;
-    font-size:15.5px;
-    line-height:1.7;
-    opacity:0.95;
-    margin:0 0 26px;
-  }
-
-  .cs-date{
-    font-family:'Bookman', serif;
-    font-size:16px;
-    letter-spacing:0.14em;
     text-transform:uppercase;
-    opacity:0.9;
+    letter-spacing:0.01em;
+    color:var(--navy-deep);
+  }
+  .hero h1 .amp{
+    color:var(--navy-deep);
+    font-style:italic;
+    font-family:'Fraunces', serif;
+    padding:0 10px;
+    text-transform:lowercase;
+  }
+  .cyrillic-line{
+    font-family:'Baskerville', serif;
+    font-style:italic;
+    font-weight:bolder;
+    font-size:clamp(26px, 2.2vw, 18px);
+    color:var(--navy-deep);
+    letter-spacing:0.02em;
     margin:0 0 26px;
+    opacity:1;
+  }
+  .amp-cy{ color:var(--navy-deep); font-style:normal; padding:0 6px; opacity:0.7; }
+  .hero-meta{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    font-family:'Baskerville', monospace;
+    font-size:16px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight: 800;
+    color:var(--ink);
+    opacity:1;
+    margin-bottom:30px;
+  }
+  .hero-meta span.divider{ opacity:0.5; }
+  .hero-sub{
+    font-size:17px;
+    font-style:italic;
+    font-family:'Fraunces', serif;
+    color:var(--ink);
+    opacity:0.95;
+    margin:0 0 34px;
+    line-height:1.5;
+  }
+  .hero-sub b{color:var(--navy-deep);font-weight:600;font-style:normal;}
+  .hero-cta{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--navy-deep);
+    text-decoration:none;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--navy-deep);
+    transition:opacity .15s ease;
+  }
+  .hero-cta:hover{ opacity:0.7; }
+
+  /* ---------- photo strip ---------- */
+  .photo-strip{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:6px;
+    background:var(--cream);
+  }
+  .photo-strip img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+  }
+  @media (max-width:700px){
+    .photo-strip{ grid-template-columns:repeat(2, 1fr); }
+    .photo-strip img{ height:150px; }
   }
 
-  .cs-ps{
-    font-family:'Bookman', serif;
-    font-size:13.5px;
-    line-height:1.7;
-    opacity:0.85;
-    margin:28px 0 0;
+  /* ---------- TAB NAV ---------- */
+  .tabbar-wrap{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 2px 14px rgba(7,37,48,0.06);
+  }
+  .tabbar{
+    max-width:1080px;
+    margin:0 auto;
+    scrollbar-width:thin;
+  }
+  .tab-btn{
+    appearance:none;
+    border:1px solid transparent;
+    background:transparent;
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .15s ease, color .15s ease;
+  }
+  .tab-btn:hover{background:var(--cream-2);}
+  .tab-btn.active{
+    background:var(--navy);
+    color:var(--cream);
+  }
+
+  .hamburger-btn{
+    display:flex;
+    appearance:none;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    border:none;
+    background:transparent;
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:14px 16px;
+    cursor:pointer;
+  }
+  .hamburger-icon{
+    position:relative;
+    width:20px;
+    height:14px;
+    flex:none;
+  }
+  .hamburger-icon span{
+    position:absolute;
+    left:0;
+    right:0;
+    height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .2s ease, opacity .2s ease, top .2s ease;
+  }
+  .hamburger-icon span:nth-child(1){top:0;}
+  .hamburger-icon span:nth-child(2){top:6px;}
+  .hamburger-icon span:nth-child(3){top:12px;}
+  .tabbar-wrap.open .hamburger-icon span:nth-child(1){top:6px;transform:rotate(45deg);}
+  .tabbar-wrap.open .hamburger-icon span:nth-child(2){opacity:0;}
+  .tabbar-wrap.open .hamburger-icon span:nth-child(3){top:6px;transform:rotate(-45deg);}
+
+  .tabbar-wrap .tabbar{
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    max-height:70vh;
+    overflow-y:auto;
+    padding:0 16px 12px;
+    gap:2px;
+  }
+  .tabbar-wrap.open .tabbar{display:flex;}
+  .tabbar-wrap .tab-btn{
+    text-align:left;
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  main{max-width:880px;margin:0 auto;padding:56px 24px 100px;}
+  section.panel{display:none;animation:fade .35s ease;}
+  section.panel.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .section-head{margin-bottom:36px;}
+  .section-head .eyebrow{color:var(--rose);}
+  .section-head h2{
+    font-size:clamp(30px,5vw,42px);
+    margin:6px 0 10px;
+    color:var(--navy-deep);
+  }
+  .section-head p{
+    color:#3f5560;
+    font-size:16px;
+    max-width:60ch;
+    line-height:1.6;
+    margin:0;
+  }
+
+  /* ---------- ticket / boarding-pass card ---------- */
+  .ticket{
+    display:flex;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:18px;
+    box-shadow:0 4px 18px rgba(7,37,48,0.05);
+  }
+  .ticket-main{flex:1;padding:22px 24px;}
+  .ticket-stub{
+    width:130px;
+    background:var(--navy);
+    color:var(--cream);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    position:relative;
+    padding:16px;
+    text-align:center;
+  }
+  .ticket-stub::before{
+    content:"";
+    position:absolute;
+    left:-8px; top:50%;
+    width:16px;height:16px;
+    background:var(--cream);
+    border-radius:50%;
+    transform:translateY(-50%);
+  }
+  .ticket-perf{
+    border-left:2px dashed var(--line);
+  }
+  .ticket .day{font-family:'Fraunces',serif;font-size:26px;font-style:italic;color:var(--gold);}
+  .ticket .month{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
+  .ticket-main .label{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin-bottom:6px;
+  }
+  .ticket-main h3{margin:0 0 6px;font-size:22px;color:var(--navy-deep);}
+  .ticket-main p{margin:0;color:#3f5560;font-size:14.5px;line-height:1.55;}
+
+  /* ---------- generic cards ---------- */
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 24px;
+    margin-bottom:16px;
+    box-shadow:0 4px 18px rgba(7,37,48,0.04);
+  }
+  .card h3{margin:0 0 8px;font-size:19px;color:var(--navy-deep);}
+  .card p{margin:0;color:#3f5560;line-height:1.6;font-size:15px;}
+  .card .tag{
+    display:inline-block;
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    background:var(--cream-2);
+    
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:640px){.grid-2{grid-template-columns:1fr;} .ticket{flex-direction:column;} .ticket-stub{width:100%;flex-direction:row;justify-content:center;} .ticket-stub::before{display:none;}}
+
+  /* callout box */
+  .callout{
+    background:var(--navy);
+    color:var(--cream);
+    border-radius:16px;
+    padding:28px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .callout h3{color:var(--gold);margin:0 0 10px;font-size:20px;}
+  .callout p{margin:0;line-height:1.7;color:var(--cream-2);font-size:15px;}
+  .callout.rose{background:var(--rose);}
+  .callout.rose h3{color:var(--cream);}
+  .callout.rose p{color:rgba(242,237,227,0.9);}
+
+  /* pill list for airports */
+  .pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .pill{
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;
+    background:var(--cream-2);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:999px;
+  }
+
+  /* divider rule */
+  .rule{
+    border:none;
+    height:1px;
+    background:var(--line);
+    margin:34px 0;
+  }
+
+  /* blog */
+  .post{border-bottom:1px solid var(--line);padding:22px 0;}
+  .post:first-child{padding-top:0;}
+  .post-meta{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--terracotta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .post h3{margin:0 0 8px;font-size:19px;color:var(--navy-deep);}
+  .post p{margin:0 0 10px;color:#3f5560;line-height:1.65;font-size:15px;}
+  .comments{background:var(--cream-2);border-radius:10px;padding:14px 16px;margin-top:10px;}
+  .comment{font-size:14px;color:#3f5560;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(20,43,51,0.08);}
+  .comment:last-child{border:none;margin:0;padding:0;}
+  .comment b{color:var(--navy-deep);}
+  .composer{display:flex;gap:8px;margin-top:14px;}
+  .composer input{
+    flex:1;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:10px 12px;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:14px;
+  }
+  .composer button{
+    border:none;
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    padding:0 18px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .composer button:hover{background:var(--navy-deep);}
+  .note{
+    font-size:13px;
+    color:#6b7d84;
+    margin-top:10px;
+    line-height:1.5;
+  }
+
+  /* food grid */
+  .food-item{display:flex;gap:14px;margin-bottom:18px;}
+  .food-mark{
+    flex-shrink:0;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+  }
+  .food-item h3{margin:0 0 4px;font-size:17px;color:var(--navy-deep);}
+  .food-item p{margin:0;font-size:14.5px;color:#3f5560;line-height:1.6;}
+
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    color:#6b7d84;
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    letter-spacing:.05em;
+  }
+
+  /* ---------- Jeopardy ---------- */
+  .jeo-scorebar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--navy);
+    color:var(--cream);
+    border-radius:12px;
+    padding:14px 20px;
+    margin-bottom:22px;
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    letter-spacing:.04em;
+  }
+  .jeo-scorebar .score-val{color:var(--gold);font-size:16px;font-weight:700;}
+  .jeo-board{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:8px;
+  }
+  .jeo-cat{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:10px 6px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    line-height:1.3;
+  }
+  .jeo-tile{
+    background:var(--navy);
+    color:var(--gold);
+    font-family:'Fraunces',serif;
     font-style:italic;
+    font-weight:600;
+    font-size:22px;
+    text-align:center;
+    padding:22px 6px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .jeo-tile:hover:not(:disabled){background:var(--navy-deep);transform:translateY(-2px);}
+  .jeo-tile:disabled{
+    background:var(--cream-2);
+    color:#9caab0;
+    cursor:default;
+  }
+  @media (max-width:640px){
+    .jeo-board{grid-template-columns:repeat(6, minmax(48px,1fr));}
+    .jeo-cat{font-size:9px;padding:6px 3px;min-height:64px;}
+    .jeo-tile{font-size:16px;padding:14px 4px;}
+  }
+
+  .jeo-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(7,37,48,0.72);
+    z-index:200;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  .jeo-modal-overlay.open{display:flex;}
+  .jeo-modal{
+    background:var(--cream);
+    border-radius:16px;
+    max-width:520px;
+    width:100%;
+    padding:30px 28px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  }
+  .jeo-modal .jeo-cat-label{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin-bottom:8px;
+  }
+  .jeo-modal h3{
+    margin:0 0 20px;
+    font-size:22px;
+    color:var(--navy-deep);
+    line-height:1.35;
+  }
+  .jeo-options{display:flex;flex-direction:column;gap:10px;}
+  .jeo-opt{
+    text-align:left;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:13px 16px;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:15px;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .jeo-opt:hover:not(:disabled){background:var(--cream-2);}
+  .jeo-opt.correct{background:#DDEFE3;border-color:#5FA779;}
+  .jeo-opt.incorrect{background:#F6DEDE;border-color:var(--rose);}
+  .jeo-modal-footer{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .jeo-timer{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:#6b7d84;
+  }
+  .jeo-close, .jeo-next{
+    border:none;
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    padding:9px 18px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .jeo-result-card{
+    text-align:center;
+    padding:10px 0;
+  }
+  .jeo-result-card .big-score{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:56px;
+    color:var(--gold);
+    margin:10px 0;
   }
 </style>
 </head>
 <body>
 
-<div class="cs-wrap">
-  <div class="cs-overlay"></div>
-  <div class="cs-content">
-    <div class="cs-eyebrow">Save the Date</div>
-    <div class="cs-names">Maria &amp; Cole</div>
-    <div class="cs-date">July 15, 2027 · Bulgaria</div>
-    <p class="cs-message">We're so excited to get married next year and would love to have you join us!</p>
-    <p class="cs-submessage">We're currently finalizing the details on our wedding website and it will be available soon! In the meantime, we wanted you to have the date on your radar if you're planning to join us next summer.</p>
-    <p class="cs-ps">P.S. We know that traveling all the way to Bulgaria may not be feasible for everyone — for our family here in the states, we're planning a separate, smaller event to celebrate sometime next year! Details to come.</p>
+<div id="gate" class="gate-overlay">
+  <div class="gate-card">
+    <div class="eyebrow mono">Private Event</div>
+    <h1>Maria &amp; Cole</h1>
+    <p class="gate-sub">Please enter the password from your invitation to view our wedding details.</p>
+    <form id="gate-form" autocomplete="off">
+      <input type="password" id="gate-input" placeholder="Password" aria-label="Password" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button type="submit">Enter</button>
+    </form>
+    <div id="gate-error" class="gate-error" style="display:none;"></div>
   </div>
 </div>
 
-<!-- ============================================================
-     CUT HERE ends the Custom-HTML-block-safe portion.
-     ============================================================ -->
+
+<div id="site-root" style="display:none;">
+<div class="hero">
+  <div class="hero-inner">
+    <h1 style="color: #fff;">The Wedding <span class="amp" style="color: #fff;">of</span></h1>
+    <h1 style="color: #fff;">Maria and Cole</h1>
+    <div class="cyrillic-line" style="color: #fff;">Сватбата на Мария и Кол</div>
+    <div class="hero-meta">
+      <span style="color: #fff;">Bulgaria</span><span class="divider">·</span><span style="color: #fff;">2027</span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="photo-strip">
+  <img src="photos/sunflowers-field.jpg" alt="Sunflower field in Bulgaria">
+  <img src="photos/sozopol-terrace.jpg" alt="Seaside terrace by the Black Sea">
+  <img src="photos/burgas-pier.jpg" alt="Burgas beach and pier">
+  <img src="photos/sozopol-alley.jpg" alt="Cobblestone alley in the old town">
+</div> -->
+
+<div class="tabbar-wrap" id="tabbar-wrap">
+  <button type="button" class="hamburger-btn" id="hamburger-btn" aria-expanded="false" aria-controls="tabbar">
+    <span class="hamburger-icon"><span></span><span></span><span></span></span>
+    Menu
+  </button>
+  <div class="tabbar" id="tabbar">
+    <button class="tab-btn active" data-tab="info">Wedding Info</button>
+    <button class="tab-btn" data-tab="chat">Get Connected</button>
+    <button class="tab-btn" data-tab="jeopardy">Jeopardy</button>
+    <button class="tab-btn" data-tab="see">Best Things to See</button>
+    <button class="tab-btn" data-tab="travel">Travel Info</button>
+    <button class="tab-btn" data-tab="dress">Dress Code &amp; Packing</button>
+    <button class="tab-btn" data-tab="food">Bulgarian Food</button>
+    <button class="tab-btn" data-tab="housing">Housing &amp; Transport</button>
+    <button class="tab-btn" data-tab="registry">Registry</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- WEDDING INFO -->
+  <section class="panel active" id="info">
+    <div class="section-head">
+      <h2>The Wedding Itinerary</h2>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-stub">
+        <div class="day">14</div>
+        <div class="month">JUL 2027</div>
+      </div>
+      <div class="ticket-main">
+        <div class="label">Wednesday Evening</div>
+        <h3>Welcome Dinner</h3>
+        <p>Welcome to Bulgaria! Come join us the night before the wedding for dinner and drinks close to guest accommodations.</p>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-stub">
+        <div class="day">15</div>
+        <div class="month">JUL 2027</div>
+      </div>
+      <div class="ticket-main">
+        <div class="label">Thursday - The Big Day</div>
+        <h3>Maria &amp; Cole's Wedding</h3>
+        <p>Ceremony and celebration by the sea. Full timing and venue details will be added here closer to the date - check back for updates.</p>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-stub">
+        <div class="day">16</div>
+        <div class="month">JUL 2027</div>
+      </div>
+      <div class="ticket-main">
+        <div class="label">Friday</div>
+        <h3>Beach &amp; Travel Day</h3>
+        <p>This is an open day - we have no set itinerary, except we are planning to be at the beach. Guests are welcome to come enjoy the beach with us, or to head out and continue the rest of their trip!</p>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+  </section>
+
+  <!-- HOUSING & TRANSPORT -->
+  <section class="panel" id="housing">
+    <div class="section-head">
+      <h2>Housing &amp; Transportation</h2>
+    </div>
+
+    <div class="callout rose">
+      <h3>Details Coming Soon</h3>
+      <p>We're still finalizing housing and transportation options for the wedding. We will post the full update directly on this page. Check back soon, or reach out to us directly if you want to start planning early!</p>
+    </div>
+  </section>
+
+  <!-- GET CONNECTED -->
+  <section class="panel" id="chat">
+    <div class="section-head">
+      <h2>Get Connected</h2>
+    </div>
+
+    <div class="callout" style="text-align:center;">
+      <h3>Join the Group Chat</h3>
+      <p>Scan the QR code below to join the official wedding travel planning WhatsApp group, set up by Maria &amp; Cole. Use it to find travel buddies, swap flight info, plan side trips, and ask each other questions.</p>
+      <a href="https://chat.whatsapp.com/IhFcXimkAdZ9jwK0oluPOr?s=sh&p=i&mlu=0&ilr=0">
+        <img src="photos/qr_code.png" alt="WhatsApp group QR code" style="width:220px; height:220px; margin:20px auto 4px; display:block; border-radius:12px; background:#fff; padding:10px;">
+    </a>
+    </div>
+  </section>
+
+  <!-- BEST THINGS TO SEE -->
+  <section class="panel" id="see">
+    <div class="section-head">
+      <h2>Best Things to See &amp; Do</h2>
+      <p>A short list of our favorites along the coast and beyond, in case you have extra time before or after the wedding.</p>
+    </div>
+
+    <div class="callout" style="margin-bottom:20px;">
+      <h3>Fast Facts About Bulgaria</h3>
+      <p>
+        🚗 Drive on the right side of the road, same as the US.<br>
+        ⛪ Orthodox Christianity is the main religion.<br>
+        💶 The euro is now the official currency (Bulgaria switched over from the lev on January 1, 2026).<br>
+        🗣️ Bulgarian is the official language, written in the Cyrillic alphabet - which Bulgaria actually created, back in the 9th century.<br>
+        🛡️ Safety: we've always felt very safe here, at all hours.<br>
+        🙂 A nod up-and-down can mean "no" and a side-to-side shake can mean "yes" here.<br>
+        🕐 Bulgaria is on Eastern European Time (EET), 8 hours ahead of US Central Daylight Time.<br>
+        🇪🇺 Bulgaria has been an EU member since 2007.
+      </p>
+    </div>
+
+    <h3 style="margin:0 0 6px; color:var(--navy-deep); font-size:22px;">If You're Landing in Sofia</h3>
+    <p style="margin:0 0 18px; color:#3f5560; font-size:15px;">A couple of worthwhile stops if your flight routes through Sofia before the 4-hour drive to Sozopol.</p>
+    <div class="grid-2" style="margin-bottom:32px;">
+      <div class="card">
+        <span class="tag">History &amp; Old Things</span>
+        <h3>Rila Monastery</h3>
+        <p>Bulgaria's largest and most famous monastery, close to Sofia - striped arches, frescoes, and mountain scenery all in one. If you love history and old buildings, this one's a must.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Full Day, Worth It</span>
+        <h3>Seven Rila Lakes</h3>
+        <p>A glacial lake hike in the Rila Mountains, day-trippable from Sofia. It's a full day commitment - cable car up, then a few hours on the trail past all seven lakes - but the views are incredible and worth the early start if you have a spare day near Sofia.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Maria's Favorite View</span>
+        <h3>Shipka Mountain</h3>
+        <p>Home to the Shipka Pass and its striking Freedom Monument, with sweeping views over the Balkan Mountains - one of Maria's favorite spots in the whole country.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Further Out</span>
+        <h3>Plovdiv</h3>
+        <p>One of the oldest continuously inhabited cities in Europe, with a beautifully preserved old town - a good stop if you're routing through Sofia.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:0 0 6px; color:var(--navy-deep); font-size:22px;">If You're Landing in Burgas</h3>
+    <p style="margin:0 0 18px; color:#3f5560; font-size:15px;">Everything below is close to the coast, all within reach of Sozopol.</p>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag">Old Town</span>
+        <h3>Sozopol Old Town</h3>
+        <p> Sozopol was founded in 610 BC. It's got lots of nightlife & charming houses, galleries, seafood tavernas, and sunset over the harbor.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Day Trip</span>
+        <h3>Nessebar</h3>
+        <p>A UNESCO World Heritage old town on its own small peninsula with roughly 3,000 years of history.</p>
+      </div>
+      <div class="card">
+        <span class="tag">The Bride's Home City</span>
+        <h3>Burgas &amp; the Sea Garden</h3>
+        <p>Maria's hometown and birthplace! Burgas is a lovely seaside city, and the Sea Garden is one of Cole and Maria's favorite local landmarks - open-air cafés, ice cream shops, beaches, plenty of benches for sitting, and tree canopies throughout the park that keep it shaded on hot days. It's about a 15-minute drive from Burgas airport.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Our Favorite</span>
+        <h3>Arkutino Beach, Primorsko</h3>
+        <p>Maria and Cole's favorite beach on the whole Black Sea coast - a wide, quieter stretch of sand near Primorsko, backed by dunes and pine forest. Well worth the short drive south of Sozopol.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Nature</span>
+        <h3>Strandzha Nature Park</h3>
+        <p>If you're after a hike near the area, Strandzha has a pretty waterfall and a cool and shady hike away from the beach.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Boat Trip</span>
+        <h3>St. Anastasia Island</h3>
+        <p>Bulgaria's only inhabited Black Sea island, just off the coast near Chernomorets, with a former monastery, a lighthouse, and a small museum - a great half-day escape. In summer, boats run from Burgas out to the island and back, making it an easy <b>2–3 hour round trip</b> if you want a quick taste of the water without committing a full day.</p>
+      </div>
+    </div>
+  </section>
+  <section class="panel" id="travel">
+    <div class="section-head">
+      <h2>Travel Info</h2>
+      <p>Burgas Airport (BOJ) is closest to Sozopol and the best option if you can find a direct flight. Sofia (SOF) has more frequent service if you don't mind the extra drive.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Closest Airport</span>
+      <h3>Burgas Airport - BOJ</h3>
+      <p>About 40 minutes from Sozopol. Direct flights run seasonally (roughly May–September) from a good number of European cities. As of the most recent schedules, direct routes include:</p>
+      <div class="pill-list">
+        <span class="pill">🇬🇧 UK - London, Manchester, Birmingham, Leeds, Newcastle, Bristol</span>
+        <span class="pill">🇩🇪 Germany - several cities via Eurowings</span>
+        <span class="pill">🇦🇹 Austria - Vienna</span>
+        <span class="pill">🇵🇱 Poland - Warsaw, Kraków, Gdańsk, Katowice</span>
+        <span class="pill">🇮🇪 Ireland - Dublin</span>
+        <span class="pill">🇭🇺 Hungary - Budapest</span>
+        <span class="pill">🇮🇹 Italy - Rome</span>
+        <span class="pill">🇫🇷 France - Paris, Lille</span>
+        <span class="pill">🇸🇪 Sweden - Stockholm</span>
+        <span class="pill">🇳🇴 Norway - Oslo</span>
+        <span class="pill">🇩🇰 Denmark - Copenhagen</span>
+        <span class="pill">🇫🇮 Finland - Helsinki</span>
+        <span class="pill">🇱🇻 Latvia - Riga</span>
+        <span class="pill">🇨🇿 Czechia - Prague</span>
+        <span class="pill">🇸🇰 Slovakia - Bratislava, Košice</span>
+        <span class="pill">🇦🇪 UAE - Dubai</span>
+      </div>
+      <p style="margin-top:12px;">Routes and frequency shift year to year and by season, so double-check availability closer to July before booking.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Alternative</span>
+      <h3>Sofia Airport - SOF</h3>
+      <p>Bulgaria's main international hub, with far more frequent long-haul and connecting options - the better bet if you're coming from outside Europe or want more flight time flexibility.</p>
+      <p style="margin-top:10px;"><b>Getting to Sozopol from Sofia:</b> it's roughly a <b>4-hour drive</b> (about 260 miles / 420 km) from Sofia Airport to Sozopol. Options include a rental car, a private transfer, or the bus/train to Burgas followed by a short taxi - but driving is by far the fastest.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Domestic</span>
+      <h3>Flying Burgas ↔ Sofia</h3>
+      <p>If your international flight only reaches Sofia, Bulgaria Air runs several domestic hops a day from Sofia to Burgas - and it's an easy one. It's only about a <b>45-minute flight</b>, and Maria and Cole have flown this route themselves a number of times. Worth pricing against the 4-hour drive, especially if you're short on time.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Close to Bulgaria</span>
+      <h3>Coming From Istanbul</h3>
+      <p>Istanbul is closer than it looks on a map - about 300 km (185 miles) by road from Burgas, roughly a 5–6 hour bus ride depending on the border crossing. Several bus companies run direct routes between Istanbul and Burgas - a solid option if you're combining the wedding with a stop in Istanbul.</p>
+    </div>
+  </section>
+
+  <!-- REGISTRY -->
+  <section class="panel" id="registry">
+    <div class="section-head">
+      <h2>Registry</h2>
+    </div>
+
+    <div class="callout">
+      <h3>Thank you for thinking of us</h3>
+      <p>We understand - and are hugely grateful for - the time, energy, and yes, the PTO, it takes to travel all the way to Bulgaria for our wedding. That's more than enough.</p>
+      <p style="margin-top:14px;">In lieu of gifts or a honeymoon fund, please treat yourself to something fun while you're here - a long dinner in the old town, a nice beach day, and a cold beer. Thank you for coming so far to celebrate with us!</p>
+    </div>
+  </section>
+
+  <!-- DRESS CODE & PACKING -->
+  <section class="panel" id="dress">
+    <div class="section-head">
+      <h2>Dress Code &amp; What to Pack</h2>
+    </div>
+
+    <h3 style="margin:0 0 14px; color:var(--navy-deep); font-size:22px;">Wedding Day - Formal Garden Party</h3>
+    <div class="grid-2" style="margin-bottom:16px;">
+      <div class="card">
+        <span class="tag">For the Ladies</span>
+        <p>Think long, maxi-style dresses in loud, fun colors - pinks, greens, orange, baby blues - the more color the better!</p>
+      </div>
+      <div class="card">
+        <span class="tag">For the Men</span>
+        <p>Linens and linen jackets are encouraged - it's going to be warm!</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-bottom:32px;">
+      <h3>A Note on the Church Ceremony</h3>
+      <p>If your dress is on the more revealing side, that's completely fine - just bring a small shawl or wrap to have on hand for the brief period we're inside the church.</p>
+    </div>
+
+    <h3 style="margin:0 0 14px; color:var(--navy-deep); font-size:22px;">Packing List - Other Days</h3>
+    <p style="margin:0 0 16px; color:#3f5560; font-size:15px;">For the welcome dinner and beach day, pack for warm outings and bring:</p>
+    <div class=style="margin-bottom:16px;">
+      <div class="card">
+        <ul style="margin:0; padding-left:20px; color:#3f5560; font-size:15px; line-height:1.8;">
+          <li>A nicer outfit for the welcome dinner. A short summer dress is perfect! For the men, shorts and a linen button down shirt is great. Dress comfortable!</li>
+          <li>Lots of swimsuits</li>
+          <li>Comfortable walking shoes</li>
+          <li>Sunscreen</li>
+          <li>Skirts and dresses</li>
+          <li>Athleisure</li>
+          <li>A beach towel</li>
+          <li>Hats & sunglasses</li>
+          <li>EU (Type C/Type F) power converters</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout rose">
+      <h3>For the Men: Jorts &amp; Fanny Packs</h3>
+      <p>Jorts are very common around here (though Cole refuses to buy a pair), and most guys wear fanny packs - Cole included, he loves his. Otherwise, normal shorts and shirts are the everyday go-to.</p>
+    </div>
+
+    <h3 style="margin:32px 0 14px; color:var(--navy-deep); font-size:22px;">Wedding Day Inspiration</h3>
+    <img src="photos/dress-code-inspiration.png" alt="Wedding day dress code inspiration" style="width:100%; border-radius:16px; display:block;">
+  </section>
+
+  <!-- BULGARIAN FOOD -->
+  <section class="panel" id="food">
+    <div class="section-head">
+      <h2>Bulgarian Food</h2>
+      <p>A short field guide to what to order while you're in town.</p>
+    </div>
+
+    <div class="food-item">
+      <div class="food-mark">Ш</div>
+      <div>
+        <h3>Shopska Salad</h3>
+        <p>Tomatoes, cucumber, peppers, onion, and a heavy grating of sirene (Bulgarian white cheese) on top. The default starter, and always a good one.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Б</div>
+      <div>
+        <h3>Banitsa</h3>
+        <p>Flaky pastry layered with egg and cheese - a breakfast staple, best eaten warm.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">К</div>
+      <div>
+        <h3>Kavarma</h3>
+        <p>A slow-cooked clay-pot stew of meat, vegetables, and spices - rich, hearty, usually served bubbling.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">К</div>
+      <div>
+        <h3>Kebapche &amp; Kyufte</h3>
+        <p>Grilled minced-meat classics - kebapche is the elongated log, kyufte the flattened patty. Order both - one of Cole and Maria's favorites! </p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Т</div>
+      <div>
+        <h3>Tarator</h3>
+        <p>A cold summer soup of yogurt, cucumber, garlic, and dill - exactly what you want on a hot afternoon. Maria's favorite.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">В</div>
+      <div>
+        <h3>Pork Neck (Свинска Вратна)</h3>
+        <p>Grilled or slow-roasted pork neck, tender and full of flavor - a menu staple, and the groom's favorite order.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Р</div>
+      <div>
+        <h3>Rakia</h3>
+        <p>Bulgaria's grape or fruit brandy, and the unofficial start to most meals. If someone offers you a glass - say yes.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">С</div>
+      <div>
+        <h3>Fresh Black Sea Fish</h3>
+        <p>Ask the restaurant for the catch of the day!</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">М</div>
+      <div>
+        <h3>Black Sea Mussels</h3>
+        <p>Fresh-picked right from the sea! (DO NOT SKIP)</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Ц</div>
+      <div>
+        <h3>Tsatsa (Пържена цаца)</h3>
+        <p>Bulgaria's popular little fried fish - deep-fried until crispy and served hot with fresh lemon and a cold beer. Cole was skeptical until he actually tried it - now it's one of his favorites.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">К</div>
+      <div>
+        <h3>Fries with Sirene</h3>
+        <p>Fresh fries topped with shredded Bulgarian sirene (feta) - simple, salty, and always a good idea.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">С</div>
+      <div>
+        <h3>Chicken Soup</h3>
+        <p>Almost every restaurant has it on the lunch menu, and it's always good.</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Д</div>
+      <div>
+        <h3>Bulgarian Tomatoes</h3>
+        <p>Bulgarian tomatoes are the BEST IN THE WORLD!! Even if you don't like tomatoes, you will like these, we promise! There is something about the soil and how the tomatoes are grown that makes them so good! </p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">Г</div>
+      <div>
+        <h3>Fruit in general</h3>
+        <p>Go to any local fruit stand, and buy whatever looks good. Fruit here is hard to beat. It all comes from local farms and villages. Recommendations: melon, peaches, and apricots!</p>
+      </div>
+    </div>
+    <div class="food-item">
+      <div class="food-mark">★</div>
+      <div>
+        <h3>Galaxy Ice Cream</h3>
+        <p>A must-try, no debate - this is a shared favorite of both the bride and groom. Maria likes vanilla, and Cole likes chocolate.</p>
+      </div>
+    </div>
+
+    <hr class="rule">
+    <div class="callout rose">
+      <h3>Also worth trying</h3>
+      <p>Bulgarian yogurt (genuinely different from what you're used to), sarmi (stuffed cabbage or vine leaves), and lyutenitsa (roasted pepper relish, usually on fresh bread). </p>
+      <p>There is SO MUCH good Bulgarian food. Our recommendation is to stay away from pizzas, pastas, burgers & "American" food. Stick to the classics - we know what we're good at and we do it well!  </p>
+    </div>
+  </section>
+
+  <!-- JEOPARDY -->
+  <section class="panel" id="jeopardy">
+    <div class="section-head">
+      <h2>Maria &amp; Cole Jeopardy</h2>
+      <p>28 questions, 6 categories. Enter your name, then answer as many as you can - correct answers score based on the category value plus a speed bonus. Your final score is saved for Maria &amp; Cole automatically, and the highest score at the wedding wins a special prize!</p>
+    </div>
+
+    <div class="jeo-scorebar">
+      <span>PLAYER SCORE</span>
+      <span class="score-val" id="jeo-score">0</span>
+      <span id="jeo-progress">0 / 28 answered</span>
+    </div>
+
+    <div class="card" id="jeo-start-card">
+      <h3>Before you start…</h3>
+      <p style="margin-bottom:12px;">Enter your name so Maria &amp; Cole can find your score.</p>
+      <div class="composer">
+        <input type="text" id="jeo-name-input" placeholder="Your name" aria-label="Your name">
+        <button type="button" id="jeo-name-submit">Start Quiz</button>
+      </div>
+    </div>
+
+    <div class="jeo-board" id="jeo-board" style="display:none; opacity:0.4; pointer-events:none;"></div>
+  </section>
+
+</main>
+
+<div class="jeo-modal-overlay" id="jeo-modal-overlay">
+  <div class="jeo-modal" id="jeo-modal">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<footer>
+  Maria &amp; Cole · Bulgaria · July 15, 2027
+</footer>
+</div>
+
+<script>
+function initSite(){
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  const tabbarWrap = document.getElementById('tabbar-wrap');
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+
+  hamburgerBtn.addEventListener('click', () => {
+    const open = tabbarWrap.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      tabbarWrap.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      window.scrollTo({top: document.querySelector('.tabbar-wrap').offsetTop, behavior:'smooth'});
+    });
+  });
+
+  document.querySelectorAll('.composer button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.previousElementSibling;
+      const text = input.value.trim();
+      if(!text) return;
+      const commentsBox = btn.closest('.post').querySelector('.comments');
+      const div = document.createElement('div');
+      div.className = 'comment';
+      div.innerHTML = '<b>You:</b> ' + text.replace(/</g,'&lt;');
+      commentsBox.appendChild(div);
+      input.value = '';
+    });
+  });
+
+  /* =========================================================
+     JEOPARDY — Maria & Cole
+     HOW TO FILL THIS IN:
+     For each question below, replace the 4 "options" strings
+     with real multiple-choice answers, and set "correct" to
+     the index (0, 1, 2, or 3) of the right one.
+     ========================================================= */
+  const jeoData = [
+    // ---- CATEGORY 1: How We Met ----
+    { category:"How We Met", value:100,
+      question:"Where did Maria and Cole first meet?",
+      options:["High school (English class)","High school (math class)","High school (panel)","College (football game)"], correct:2 },
+    { category:"How We Met", value:200,
+      question:"Who formally connected Cole and Maria?",
+      options:["Cole Blatchford","Cody Sparrow","High School English Teacher","Casey Zhong"], correct:0 },
+    { category:"How We Met", value:300,
+      question:"How long did Maria and Cole date before getting engaged?",
+      options:["11 years","8 years","9 years","10 years"], correct:2 },
+    { category:"How We Met", value:400,
+      question:"Where were they when Cole proposed?",
+      options:["Maine","Maryland","Chicago","Boston"], correct:0 },
+
+    // ---- CATEGORY 2: All About Cole ----
+    { category:"All About Cole", value:100,
+      question:"What's Cole's go-to order at a Bulgarian restaurant?",
+      options:["Pork Neck","Kebapche","Shopska Salata","Fish"], correct:0 },
+    { category:"All About Cole", value:200,
+      question:"What is Cole's favorite ice cream flavor?",
+      options:["Chocolate","Peanut Butter and Chocolate","Cookie Dough","Carrot Cake"], correct:0 },
+    { category:"All About Cole", value:300,
+      question:"What did Cole want to be when he grew up?",
+      options:["Maria's husband","Programmer","Inventor","Firefighter"], correct:2 },
+    { category:"All About Cole", value:400,
+      question:"What year did Cole first visit Bulgaria?",
+      options:["2019","2021","2023","2025"], correct:1 },
+
+    // ---- CATEGORY 3: All About Maria ----
+    { category:"All About Maria", value:100,
+      question:"What Bulgarian city does Maria actually call home?",
+      options:["Burgas","Sofia","Sozopol","Nessebar"], correct:0 },
+    { category:"All About Maria", value:200,
+      question:"What's Maria's hidden talent?",
+      options:["Basketball","Painting","Billiards","Singing"], correct:2 },
+    { category:"All About Maria", value:300,
+      question:"What's Maria's all-time favorite Taylor Swift love song?",
+      options:["Jump Then Fall","Daylight","Love Story","Cornelia Street"], correct:3 },
+    { category:"All About Maria", value:400,
+      question:"What time is Maria most likely to leave the bar?",
+      options:["8:21 PM","11:10 PM","11:55 PM","4:15 AM"], correct:2 },
+
+    // ---- CATEGORY 4: Firsts & Wild Cards ----
+    { category:"Firsts & Wild Cards", value:100,
+      question:"What was the first (non-Colorado) trip Maria and Cole took together?",
+      options:["Kansas City, MO","St. Petersburg, FL","Burgas, Bulgaria","New York, NY"], correct:1 }, // TODO: confirm correct index
+    { category:"Firsts & Wild Cards", value:200,
+      question:"Where was Maria and Cole's first date?",
+      options:["Zoo Lights","Picnic in the park","Bowling","Panera study date"], correct:0 },
+    { category:"Firsts & Wild Cards", value:300,
+      question:"What's the most ridiculous thing Maria has done to impress Cole?",
+      options:["Told him she loves football and the Broncos","Told him she loves skiing","Told him she doesn't know how to swim","Told him she loves scary movies"], correct:1 },
+    { category:"Firsts & Wild Cards", value:400,
+      question:"When is Maria and Cole's anniversary?",
+      options:["November 6","June 29","February 16","December 11"], correct:3 },
+
+    // ---- CATEGORY 5: All About Bulgaria ----
+    { category:"All About Bulgaria", value:100,
+      question:"What is the oldest city in Europe?",
+      options:["Rome, Italy","Athens, Greece","Plovdiv, Bulgaria","Cádiz, Spain"], correct:2 },
+    { category:"All About Bulgaria", value:200,
+      question:"What export is Bulgaria most known for?",
+      options:["Lentils","Rose oil","Maria","Iron and steel"], correct:1 },
+    { category:"All About Bulgaria", value:300,
+      question:"What is the famous Bulgarian holiday celebrated in the spring?",
+      options:["Baba Marta","Imen Den","Koleda","Nova Godina"], correct:0 },
+    { category:"All About Bulgaria", value:400,
+      question:"Why is the Black Sea called the Black Sea?",
+      options:["The deep waters and minerals create a rich, dark blue coloring visible from the ancient shores.","Ottoman directional naming system - black represented the north.","They named it at night.","Greek \"axeinos\" (meaning \"unfamiliar\") was symbolized by the color black in ancient maritime tradition."], correct:1 },
+
+    // ---- CATEGORY 6: Super Wild Cards ----
+    { category:"Super Wild Cards", value:100,
+      question:"What Bulgarian dessert is a shared favorite of Maria and Cole? (hint: check the Bulgarian Food tab)",
+      options:["Baklava","Galaxy Ice Cream","Garash Cake","Bulgarian Melon"], correct:1 },
+    { category:"Super Wild Cards", value:200,
+      question:"What is Cole's middle name?",
+      options:["Ryan","Michael","James","Roger"], correct:1 }, 
+    { category:"Super Wild Cards", value:300,
+      question:"As of August 2026, how many countries have Cole and Maria been to together?",
+      options:["8","9","10","14"], correct:3 },
+    { category:"Super Wild Cards", value:400,
+      question:"What is Cole's favorite Bulgarian beer?",
+      options:["Burgasko","Primorsko","Shumensko","Kamenitza"], correct:0 },
+    { category:"Super Wild Cards", value:500,
+      question:"What is Maria's favorite brand of Bulgarian water?",
+      options:["Bankia","Devin","Gorna Banya","Velingrad"], correct:3 },
+    { category:"Super Wild Cards", value:600,
+      question:"What is Cole's most commonly used nickname?",
+      options:["Colé","Colezonné","Coley Poley","Koluu"], correct:0 },
+ ];
+
+  const categories = [...new Set(jeoData.map(q => q.category))];
+  const board = document.getElementById('jeo-board');
+  const overlay = document.getElementById('jeo-modal-overlay');
+  const modal = document.getElementById('jeo-modal');
+  const scoreEl = document.getElementById('jeo-score');
+  const progressEl = document.getElementById('jeo-progress');
+  const startCard = document.getElementById('jeo-start-card');
+  const nameInput = document.getElementById('jeo-name-input');
+  const nameSubmit = document.getElementById('jeo-name-submit');
+
+  let score = 0;
+  let answeredCount = 0;
+  let timerInterval = null;
+  let playerName = '';
+  let answerList = {};
+
+  /* ---- Name gate ---- */
+  nameSubmit.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if(!name){ nameInput.focus(); return; }
+    playerName = name;
+    startCard.style.display = 'none';
+    board.style.display = 'grid';
+    board.style.opacity = '1';
+    board.style.pointerEvents = 'auto';
+  });
+  nameInput.addEventListener('keydown', e => { if(e.key === 'Enter') nameSubmit.click(); });
+
+  categories.forEach(cat => {
+    const catEl = document.createElement('div');
+    catEl.className = 'jeo-cat';
+    catEl.textContent = cat;
+    board.appendChild(catEl);
+  });
+
+  const values = [...new Set(jeoData.map(q => q.value))].sort((a,b) => a - b);
+  values.forEach(val => {
+    categories.forEach(cat => {
+      const qIndex = jeoData.findIndex(q => q.category === cat && q.value === val);
+      if(qIndex === -1){
+        const blank = document.createElement('div');
+        blank.className = 'jeo-tile';
+        blank.style.background = 'transparent';
+        blank.style.cursor = 'default';
+        board.appendChild(blank);
+        return;
+      }
+      const btn = document.createElement('button');
+      btn.className = 'jeo-tile';
+      btn.textContent = '$' + val;
+      btn.dataset.qindex = qIndex;
+      btn.addEventListener('click', () => openQuestion(qIndex, btn));
+      board.appendChild(btn);
+    });
+  });
+
+  function openQuestion(qIndex, tileEl){
+    const q = jeoData[qIndex];
+    let seconds = 0;
+    clearInterval(timerInterval);
+
+    function render(){
+      modal.innerHTML = `
+        <div class="jeo-cat-label">${q.category} · $${q.value}</div>
+        <h3>${q.question}</h3>
+        <div class="jeo-options" id="jeo-opts"></div>
+        <div class="jeo-modal-footer">
+          <span class="jeo-timer" id="jeo-timer">Time: 0s</span>
+          <button class="jeo-close" id="jeo-close">Close</button>
+        </div>
+      `;
+      const optsEl = modal.querySelector('#jeo-opts');
+      q.options.forEach((opt, i) => {
+        const b = document.createElement('button');
+        b.className = 'jeo-opt';
+        b.textContent = opt;
+        b.addEventListener('click', () => selectAnswer(i));
+        optsEl.appendChild(b);
+      });
+      modal.querySelector('#jeo-close').addEventListener('click', closeModal);
+    }
+
+    function selectAnswer(i){
+      clearInterval(timerInterval);
+      const optButtons = modal.querySelectorAll('.jeo-opt');
+      optButtons.forEach((b, idx) => {
+        b.disabled = true;
+        if(idx === q.correct) b.classList.add('correct');
+        else if(idx === i) b.classList.add('incorrect');
+      });
+
+      let earned = 0;
+      if(i === q.correct){
+        const speedBonus = Math.max(0, 50 - seconds * 2);
+        earned = q.value + Math.round(speedBonus);
+        score += earned;
+      }
+      answerList[q.question] = q.options[i];
+      scoreEl.textContent = score;
+      answeredCount++;
+      progressEl.textContent = answeredCount + ' / ' + jeoData.length + ' answered';
+      tileEl.disabled = true;
+      tileEl.textContent = '✓';
+
+      const footer = modal.querySelector('.jeo-modal-footer');
+      footer.innerHTML = `<span class="jeo-timer">Locked in!</span>
+        <button class="jeo-close" id="jeo-close-2">Next</button>`;
+      modal.querySelector('#jeo-close-2').addEventListener('click', closeModal);
+
+      if(answeredCount === jeoData.length){
+        setTimeout(showFinalResults, 500);
+      }
+    }
+
+    render();
+    overlay.classList.add('open');
+    timerInterval = setInterval(() => {
+      seconds++;
+      const t = modal.querySelector('#jeo-timer');
+      if(t) t.textContent = 'Time: ' + seconds + 's';
+    }, 1000);
+  }
+
+  function closeModal(){
+    clearInterval(timerInterval);
+    overlay.classList.remove('open');
+  }
+
+  /* =========================================================
+     SENDING RESULTS TO MARIA & COLE
+     This submits each finished quiz (name + score + answers) to
+     a Google Form in the background, so all responses collect
+     into a Google Sheet you two can check anytime — no visitor
+     needs to do anything extra.
+
+     TO SET THIS UP:
+     1. Create a Google Form with three questions:
+        "Name" (short answer), "Score" (short answer), and
+        "Answers" (paragraph — it needs to hold a JSON blob).
+     2. Click the 3-dot menu → "Get pre-filled link", fill in
+        sample answers, and click "Get link".
+     3. That link will look like:
+        https://docs.google.com/forms/d/e/FORM_ID/viewform?entry.111=Sample+Name&entry.222=99&entry.333=%7B%7D
+        https://docs.google.com/forms/d/e/1FAIpQLSf1SG0DM5766zS8oVDXxCiBmt7O-bnHd8TZZhrkEnCExc0SGw/viewform?usp=pp_url&entry.649680867=Cole&entry.2056740951=1000&entry.1234567890=%7B%7D
+        https://docs.google.com/forms/d/e/1FAIpQLSf1SG0DM5766zS8oVDXxCiBmt7O-bnHd8TZZhrkEnCExc0SGw/viewform?usp=pp_url&entry.649680867=Cole&entry.2056740951=12&entry.1071389919=%7B%22question%22:+%22answer%22%7D
+        Copy the FORM_ID and the three entry.XXXXXXX numbers into
+        the constants below.
+     4. Responses will appear in the linked Google Sheet
+        (Responses tab → green Sheets icon) in real time. The
+        "Answers" column holds a JSON object mapping each
+        question to the answer the player picked.
+     ========================================================= */
+  const GOOGLE_FORM_ID = "1FAIpQLSf1SG0DM5766zS8oVDXxCiBmt7O-bnHd8TZZhrkEnCExc0SGw";
+  const GOOGLE_FORM_NAME_ENTRY = "entry.649680867";
+  const GOOGLE_FORM_SCORE_ENTRY = "entry.2056740951";
+  const GOOGLE_FORM_ANSWERS_ENTRY = "entry.1071389919";
+
+  function submitResultToGoogleForm(name, finalScore, answers){
+    if(GOOGLE_FORM_ID === "YOUR_FORM_ID_HERE") return; // not configured yet
+    const url = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`
+      + `?${GOOGLE_FORM_NAME_ENTRY}=${encodeURIComponent(name)}`
+      + `&${GOOGLE_FORM_SCORE_ENTRY}=${encodeURIComponent(finalScore)}`
+      + `&${GOOGLE_FORM_ANSWERS_ENTRY}=${encodeURIComponent(JSON.stringify(answers))}`;
+    fetch(url, { method: 'POST', mode: 'no-cors' }).catch(() => {});
+  }
+
+  function showFinalResults(){
+    submitResultToGoogleForm(playerName, score, answerList);
+    modal.innerHTML = `
+      <div class="jeo-result-card">
+        <div class="jeo-cat-label">Game Over</div>
+        <h3>${playerName ? playerName + "'s" : "Your"} Final Score</h3>
+        <div class="big-score">${score}</div>
+        <p style="color:#3f5560;">Nice work! Your score has been saved for Maria &amp; Cole.</p>
+        <div class="jeo-modal-footer" style="justify-content:center; margin-top:20px;">
+          <button class="jeo-close" id="jeo-final-close">Close</button>
+        </div>
+      </div>
+    `;
+    modal.querySelector('#jeo-final-close').addEventListener('click', closeModal);
+    overlay.classList.add('open');
+  }
+}
+initSite();
+
+(function(){
+  var gate = document.getElementById('gate');
+  var form = document.getElementById('gate-form');
+  var input = document.getElementById('gate-input');
+  var errorEl = document.getElementById('gate-error');
+  var siteRoot = document.getElementById('site-root');
+  var STORAGE_KEY = 'mc2027-unlocked-v1';
+  var CORRECT_HASH = 'c5a3e31fb4ba7510b0021924ba799112dda7c96893eb5323701ab9667d1f262f';
+
+  function toHex(buffer){
+    var bytes = new Uint8Array(buffer);
+    var hex = '';
+    for (var i = 0; i < bytes.length; i++){
+      var h = bytes[i].toString(16);
+      if (h.length < 2) h = '0' + h;
+      hex += h;
+    }
+    return hex;
+  }
+
+  function reveal(){
+    siteRoot.style.display = '';
+    gate.style.display = 'none';
+  }
+
+  function tryUnlock(password){
+    if (!window.crypto || !window.crypto.subtle){
+      errorEl.textContent = 'This browser cannot verify the password securely. Please try a different browser.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    var enc = new TextEncoder();
+    window.crypto.subtle.digest('SHA-256', enc.encode(password)).then(function(digest){
+      var hex = toHex(digest);
+      if (hex === CORRECT_HASH){
+        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e){}
+        errorEl.style.display = 'none';
+        reveal();
+      } else {
+        errorEl.textContent = 'Incorrect password. Please try again.';
+        errorEl.style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    tryUnlock(input.value.trim());
+  });
+
+  var alreadyUnlocked = false;
+  try { alreadyUnlocked = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch(e){}
+  if (alreadyUnlocked){
+    reveal();
+  }
+})();
+</script>
+
 
 </body>
 </html>
