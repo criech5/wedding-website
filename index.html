@@ -455,7 +455,7 @@
     position:relative;
     overflow:hidden;
   }
-  .callout h3{color:var(--gold);margin:0 0 10px;font-size:20px;}
+  .callout h3{color:var(--cream-2);margin:0 0 10px;font-size:20px;}
   .callout p{margin:0;line-height:1.7;color:var(--cream-2);font-size:15px;}
   .callout.rose{background:var(--rose);}
   .callout.rose h3{color:var(--cream);}
@@ -901,6 +901,12 @@
     <div class="section-head">
       <h2>Travel Info</h2>
       <p>Burgas Airport (BOJ) is closest to Sozopol and the best option if you can find a direct flight. Sofia (SOF) has more frequent service if you don't mind the extra drive.</p>
+    </div>
+
+    <div class="callout rose">
+      <h3>A note on Eurovision 2027</h3>
+      <p>As some of you may be aware, Bulgaria won the 2026 edition of the <a href="https://en.wikipedia.org/wiki/Eurovision_Song_Contest">Eurovision Song Contest</a>! As winners, Bulgaria will host the contest in 2027 - and in somewhat of a surprise decision, Burgas was chosen over Sofia as the host city.</p>
+      <p>The contest will take place in May, so it doesn't overlap with the wedding. However, the Burgas airport is anticipated to expand its summer route selection for next year. While we still don't have any information on what those new routes will be or how long they will be in place, we would recommend waiting to book flights until at least later this year.</p>
     </div>
 
     <div class="card">
@@ -1499,7 +1505,8 @@ initSite();
   var errorEl = document.getElementById('gate-error');
   var siteRoot = document.getElementById('site-root');
   var STORAGE_KEY = 'mc2027-unlocked-v1';
-  var CORRECT_HASH = 'c5a3e31fb4ba7510b0021924ba799112dda7c96893eb5323701ab9667d1f262f';
+  var CORRECT_HASH1 = 'c5a3e31fb4ba7510b0021924ba799112dda7c96893eb5323701ab9667d1f262f';
+  var CORRECT_HASH2 = '4be0cd65c73ab16dc15a7e95f3f0f8a489d716aeeb5f08216358e0f5f0852f83';
 
   function toHex(buffer){
     var bytes = new Uint8Array(buffer);
@@ -1526,7 +1533,8 @@ initSite();
     var enc = new TextEncoder();
     window.crypto.subtle.digest('SHA-256', enc.encode(password)).then(function(digest){
       var hex = toHex(digest);
-      if (hex === CORRECT_HASH){
+      console.log(hex);
+      if (hex === CORRECT_HASH1 || hex == CORRECT_HASH2){
         try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e){}
         errorEl.style.display = 'none';
         reveal();
