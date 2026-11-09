@@ -1525,11 +1525,11 @@ initSite();
   }
 
   function tryUnlock(password){
-    if (!window.crypto || !window.crypto.subtle){
+   /* if (!window.crypto || !window.crypto.subtle){
       errorEl.textContent = 'This browser cannot verify the password securely. Please try a different browser.';
       errorEl.style.display = 'block';
       return;
-    }
+    } */
     var enc = new TextEncoder();
     window.crypto.subtle.digest('SHA-256', enc.encode(password)).then(function(digest){
       var hex = toHex(digest);
